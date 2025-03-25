@@ -15,6 +15,9 @@ public class SceneIntroductionOne : MonoBehaviour
     public SpriteRenderer dialogueSprite;
     public SpriteRenderer dialogueSpriteBack;
     public AudioSource dialogueAudio;
+    private bool _whisper;
+    private bool _isTalking;
+    private bool _skipDialogue;
     
     private IEnumerator Start()
     {
@@ -50,10 +53,30 @@ public class SceneIntroductionOne : MonoBehaviour
                 dialogueNameLeft.gameObject.SetActive(true);
                 dialogueNameRight.gameObject.SetActive(false);
             }
+            _isTalking = true;
             foreach (char currentCharacter in currentDialogue.message)
             {
+                if (_skipDialogue)
+                {
+                    dialogueText.text = currentDialogue.message;
+                    _skipDialogue = false;
+                    break;
+                }
                 dialogueText.text += currentCharacter;
-                if (currentCharacter == ' ')
+                if (_whisper)
+                {
+                    dialogueSprite.sprite = dialogueSprite.sprite;
+                    if (currentCharacter == ')')
+                    {
+                        _whisper = false;
+                    }
+                }
+                else if (currentCharacter == '(')
+                {
+                    _whisper = true;
+                    dialogueSprite.sprite = dialogueSprite.sprite;
+                }
+                else if (!Char.IsLetterOrDigit(currentCharacter))
                 {
                     dialogueSprite.sprite = currentDialogue.texture;
                 }
@@ -64,7 +87,7 @@ public class SceneIntroductionOne : MonoBehaviour
                 }
                 yield return new WaitForSeconds(0.1f);
             }
-
+            _isTalking = false;
             dialogueSprite.sprite = currentDialogue.texture;
             while (!Input.GetMouseButtonDown(0))
             {
@@ -74,5 +97,13 @@ public class SceneIntroductionOne : MonoBehaviour
         dialogueBox.SetActive(false);
         dialogueSprite.sprite = null;
         dialogueSpriteBack.sprite = null;
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && _isTalking)
+        {
+            _skipDialogue = true;
+        }
     }
 }

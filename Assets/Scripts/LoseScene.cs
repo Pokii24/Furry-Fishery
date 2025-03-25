@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,6 +17,9 @@ public class LoseScene : MonoBehaviour
     public SpriteRenderer dialogueSprite;
     public SpriteRenderer dialogueSpriteBack;
     public AudioSource dialogueAudio;
+    private bool _whisper;
+    private bool _isTalking;
+    private bool _skipDialogue;
     
     private IEnumerator Start()
     {
@@ -53,8 +57,27 @@ public class LoseScene : MonoBehaviour
             }
             foreach (char currentCharacter in currentDialogue.message)
             {
+                if (_skipDialogue)
+                {
+                    dialogueText.text = currentDialogue.message;
+                    _skipDialogue = false;
+                    break;
+                }
                 dialogueText.text += currentCharacter;
-                if (currentCharacter == ' ')
+                if (_whisper)
+                {
+                    dialogueSprite.sprite = dialogueSprite.sprite;
+                    if (currentCharacter == ')')
+                    {
+                        _whisper = false;
+                    }
+                }
+                else if (currentCharacter == '(')
+                {
+                    _whisper = true;
+                    dialogueSprite.sprite = dialogueSprite.sprite;
+                }
+                else if (!Char.IsLetterOrDigit(currentCharacter))
                 {
                     dialogueSprite.sprite = currentDialogue.texture;
                 }
@@ -65,6 +88,7 @@ public class LoseScene : MonoBehaviour
                 }
                 yield return new WaitForSeconds(0.1f);
             }
+
 
             dialogueSprite.sprite = currentDialogue.texture;
             while (!Input.GetMouseButtonDown(0))
@@ -78,5 +102,12 @@ public class LoseScene : MonoBehaviour
         //wait for fadeout
         LevelSystem.Instance.level = 1;
         SceneManager.LoadScene("Scene 0");
+    }
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && _isTalking)
+        {
+            _skipDialogue = true;
+        }
     }
 }
