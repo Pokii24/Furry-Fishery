@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9962975616589f6499453c3d92530b22, type: 3}
   m_Name: TutorialOne
   m_EditorClassIdentifier: 
-  dialogues:
+  dialogueList:
   - name: Xavier
-    message: catch 3 fish before the timer on the left runs out, you can see how
-      much score you have on the top right of the screen on the hanging sign.
+    message: you can see how many fish you have on the top right of the screen on
+      the hanging sign. Lets try catching 3 fish.
     isLeft: 1
-    textWidth: 1000
+    textWidth: 670
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
     texture: {fileID: 21300000, guid: 53584454415ecf047a3409c86b0008a1, type: 3}
     textureTalking: {fileID: 21300000, guid: 4a3c6f1f69ac3ae42bbc2aac9b839b82, type: 3}
@@ -26,7 +26,24 @@ MonoBehaviour:
     message: to catch a fish make sure you look for the rod being pulled down and
       text and audio that will appear along with it
     isLeft: 1
-    textWidth: 1000
+    textWidth: 670
+    talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
+    texture: {fileID: 21300000, guid: 53584454415ecf047a3409c86b0008a1, type: 3}
+    textureTalking: {fileID: 21300000, guid: 4a3c6f1f69ac3ae42bbc2aac9b839b82, type: 3}
+    dialogueSpriteBack: {fileID: 0}
+  - name: Xavier
+    message: catch them all before the timer on the left runs out
+    isLeft: 0
+    textWidth: 770
+    talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
+    texture: {fileID: 21300000, guid: 53584454415ecf047a3409c86b0008a1, type: 3}
+    textureTalking: {fileID: 21300000, guid: 4a3c6f1f69ac3ae42bbc2aac9b839b82, type: 3}
+    dialogueSpriteBack: {fileID: 0}
+  - name: Xavier
+    message: for this time i can let it slide if you dont finish on time but make
+      sure it doesnt happen when doing an order.
+    isLeft: 0
+    textWidth: 770
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
     texture: {fileID: 21300000, guid: 53584454415ecf047a3409c86b0008a1, type: 3}
     textureTalking: {fileID: 21300000, guid: 4a3c6f1f69ac3ae42bbc2aac9b839b82, type: 3}

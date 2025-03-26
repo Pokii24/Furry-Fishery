@@ -25,7 +25,7 @@ public class LoseScene : MonoBehaviour
     {
         //wait for screen to fade in
         dialogueBox.SetActive(true);
-        foreach (Dialogue currentDialogue in loseDialogue.dialogues)
+        foreach (Dialogue currentDialogue in loseDialogue.dialogueList)
         {
             dialogueNameLeft.text = currentDialogue.name;
             dialogueNameRight.text = currentDialogue.name;

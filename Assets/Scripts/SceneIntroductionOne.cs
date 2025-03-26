@@ -23,7 +23,7 @@ public class SceneIntroductionOne : MonoBehaviour
     {
         //wait for animation of customer sliding in
         dialogueBox.SetActive(true);
-        foreach (Dialogue currentDialogue in introDialogue.dialogues)
+        foreach (Dialogue currentDialogue in introDialogue.dialogueList)
         {
             dialogueNameLeft.text = currentDialogue.name;
             dialogueNameRight.text = currentDialogue.name;

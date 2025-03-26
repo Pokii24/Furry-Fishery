@@ -24,7 +24,7 @@ public class WinScene : MonoBehaviour
     {
         //wait for fade in
         dialogueBox.SetActive(true);
-        foreach (Dialogue currentDialogue in winDialogue.dialogues)
+        foreach (Dialogue currentDialogue in winDialogue.dialogueList)
         {
             dialogueNameLeft.text = currentDialogue.name;
             dialogueNameRight.text = currentDialogue.name;

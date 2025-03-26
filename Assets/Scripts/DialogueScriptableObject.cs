@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "Dialogue", menuName = "Dialogue")]
 public class DialogueScriptableObject : ScriptableObject
 {
-    public List<Dialogue> dialogues = new List<Dialogue>();
+    [FormerlySerializedAs("dialogues")] public List<Dialogue> dialogueList = new List<Dialogue>();
 }
 
 [System.Serializable]

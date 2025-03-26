@@ -24,7 +24,7 @@ public class OrderCompleteScene : MonoBehaviour
     {
         //wait for fade in
         dialogueBox.SetActive(true);
-        foreach (Dialogue currentDialogue in orderCompleteDialogue.dialogues)
+        foreach (Dialogue currentDialogue in orderCompleteDialogue.dialogueList)
         {
             dialogueNameLeft.text = currentDialogue.name;
             dialogueNameRight.text = currentDialogue.name;

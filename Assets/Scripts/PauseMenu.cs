@@ -5,6 +5,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
@@ -20,7 +21,7 @@ public class PauseMenu : MonoBehaviour
     public Slider MusicVolume;
     public AudioMixer SFXMixer;
     public AudioMixer MusicMixer;
-    private bool _isPausing;
+    public bool isPausing;
 
     public Transform defaultRodAnim;
     public Transform looseLineAnim;
@@ -50,7 +51,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        if (_isPausing || volumeSettings.activeSelf) return;
+        if (isPausing || volumeSettings.activeSelf) return;
         isPaused = !isPaused;
         if (isPaused)
         {
@@ -73,7 +74,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.interactable = false;
         pauseMenu.blocksRaycasts = false;
-        _isPausing = true;
+        isPausing = true;
         resumeButton.anchoredPosition = new Vector2(0, 318);
         volumeButton.anchoredPosition = new Vector2(0, 318);
         mainMenuButton.anchoredPosition = new Vector2(0, 318);
@@ -86,14 +87,14 @@ public class PauseMenu : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         pauseMenu.interactable = true;
         pauseMenu.blocksRaycasts = true;
-        _isPausing = false;
+        isPausing = false;
     }
 
     IEnumerator UnPauseCoroutine()
     {
         pauseMenu.interactable = false;
         pauseMenu.blocksRaycasts = false;
-        _isPausing = true;
+        isPausing = true;
         resumeButton.DOAnchorPosY(318, 0.75f);
         volumeButton.DOAnchorPosY(318, 0.75f);
         mainMenuButton.DOAnchorPosY(318, 0.75f);
@@ -101,7 +102,7 @@ public class PauseMenu : MonoBehaviour
         looseLineAnim.DOLocalMoveX(-0.03568355f, 1f);
         bobberAnim.DOLocalMoveX(-0.03568355f, 1f);
         yield return new WaitForSeconds(0.75f);
-        _isPausing = false;
+        isPausing = false;
     }
 
     IEnumerator PauseMusic()
