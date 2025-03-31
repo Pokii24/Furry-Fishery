@@ -241,6 +241,11 @@ public class TutorialPlayerController : MonoBehaviour
         if (_currentStep == TutorialStep.CatchThreeFish)
         {
             FadeManager.Instance.FadeIn();
+            dialogueSprite.sprite = dialogue.dialogueList[0].texture;
+            if (dialogue.dialogueList[0].dialogueSpriteBack)
+            {
+                dialogueSpriteBack.sprite = dialogue.dialogueList[0].dialogueSpriteBack;
+            }
             yield return new WaitForSeconds(1f);
         }
         

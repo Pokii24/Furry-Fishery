@@ -24,6 +24,11 @@ public class LoseScene : MonoBehaviour
     private IEnumerator Start()
     {
         FadeManager.Instance.FadeIn();
+        dialogueSprite.sprite = loseDialogue.dialogueList[0].texture;
+        if (loseDialogue.dialogueList[0].dialogueSpriteBack)
+        {
+            dialogueSpriteBack.sprite = loseDialogue.dialogueList[0].dialogueSpriteBack;
+        }
         yield return new WaitForSeconds(1f);
         //wait for screen to fade in
         dialogueBox.SetActive(true);

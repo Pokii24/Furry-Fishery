@@ -23,6 +23,11 @@ public class SceneIntroductionOne : MonoBehaviour
     private IEnumerator Start()
     {
         FadeManager.Instance.FadeIn();
+        dialogueSprite.sprite = introDialogue.dialogueList[0].texture;
+        if (introDialogue.dialogueList[0].dialogueSpriteBack)
+        {
+            dialogueSpriteBack.sprite = introDialogue.dialogueList[0].dialogueSpriteBack;
+        }
         yield return new WaitForSeconds(1f);
         //wait for animation of customer sliding in
         dialogueBox.SetActive(true);

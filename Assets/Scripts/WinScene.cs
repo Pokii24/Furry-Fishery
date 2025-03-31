@@ -23,6 +23,11 @@ public class WinScene : MonoBehaviour
     private IEnumerator Start()
     {
         FadeManager.Instance.FadeIn();
+        dialogueSprite.sprite = winDialogue.dialogueList[0].texture;
+        if (winDialogue.dialogueList[0].dialogueSpriteBack)
+        {
+            dialogueSpriteBack.sprite = winDialogue.dialogueList[0].dialogueSpriteBack;
+        }
         yield return new WaitForSeconds(1f);
         //wait for fade in
         dialogueBox.SetActive(true);
