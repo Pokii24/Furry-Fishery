@@ -19,8 +19,8 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetFloat("MusicVolume", 0.5f);
         }
 
-        SFXMixer.SetFloat("SFXVolume", Mathf.Log10(PlayerPrefs.GetFloat("SFXVolume")));
-        MusicMixer.SetFloat("MusicVolume", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume")));
+        SFXMixer.SetFloat("SFXVolume", Mathf.Log10(PlayerPrefs.GetFloat("SFXVolume")) * 20);
+        MusicMixer.SetFloat("MusicVolume", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume")) * 20);
 
         FadeManager.Instance.FadeIn();
     }
