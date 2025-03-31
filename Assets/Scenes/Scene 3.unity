@@ -2252,6 +2252,7 @@ MonoBehaviour:
   - {fileID: 391706120}
   - {fileID: 1612546793}
   - {fileID: 984917877}
+  scoreScriptableObject: {fileID: 11400000, guid: be15adac36033db48b5a565b4b7c8cc4, type: 2}
   ohNoAnim: {fileID: 244661429}
   niceAnim: {fileID: 1828845861}
   catchAnim: {fileID: 449103355}
@@ -4439,6 +4440,7 @@ MonoBehaviour:
   MusicVolume: {fileID: 954876822}
   SFXMixer: {fileID: 24100000, guid: d649ccbd6b831de4eb89b1f80d03f380, type: 2}
   MusicMixer: {fileID: 24100000, guid: 62ba2e7f09360104090297c1bda0abca, type: 2}
+  isPausing: 0
   defaultRodAnim: {fileID: 969627552}
   looseLineAnim: {fileID: 164401904}
   bobberAnim: {fileID: 675376440}

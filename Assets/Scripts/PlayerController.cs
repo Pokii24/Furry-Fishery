@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private float _currentDaylightTimer;
     public Image daylightTimerFill;
     public List<GameObject> orderNumber;
+    private bool _gameEnding;
+    public ScoreScriptableObject scoreScriptableObject;
 
     public GameObject ohNoAnim;
     public GameObject niceAnim;
@@ -47,12 +49,14 @@ public class PlayerController : MonoBehaviour
         _currentFishtime = Random.Range(minFishTime, maxFishTime);
         startOfReelingTime = LevelSystem.Instance.levels[LevelSystem.Instance.level - 1];
         _currentDaylightTimer = daylightTimer;
+        FadeManager.Instance.FadeIn();
+        if (LevelSystem.Instance.level == 1) scoreScriptableObject.ResetScore();
     }
     
     void Update()
     {
         //number countdown until fish appears
-        if (_currentlyFishing && !_fishAppear && !PauseMenu.Instance.isPaused)
+        if (_currentlyFishing && !_fishAppear && !PauseMenu.Instance.isPaused && !_gameEnding)
         {
             _currentFishtime -= Time.deltaTime;
             if (_currentFishtime <= 0)
@@ -71,7 +75,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         // if we don't catch fish in time we restart fishing time, resetting fish time
-        else if (_fishAppear && !PauseMenu.Instance.isPaused)
+        else if (_fishAppear && !PauseMenu.Instance.isPaused && !_gameEnding)
         {
             _currentReelingTime -= Time.deltaTime; //turning currentReelingTime into countdown
             if (_currentReelingTime <= 0)
@@ -81,6 +85,7 @@ public class PlayerController : MonoBehaviour
                 _currentFishtime = Random.Range(minFishTime, maxFishTime);
                //making sure you can't go into negatives and plays sound
                 if (score > 0) score--;
+                scoreScriptableObject.fishLost += 1;
                 StartCoroutine(LoseFishAnimation());
                 Debug.Log("Fish lost :[");
                 reelingInSound.Stop();
@@ -90,7 +95,7 @@ public class PlayerController : MonoBehaviour
         }
         
         // checks for player input and if 10 fish aren't caught it will increase counter vice versa
-        if (Input.GetMouseButtonDown(1) && !tenFishCaught && _fishAppear && !PauseMenu.Instance.isPaused)
+        if (Input.GetMouseButtonDown(1) && !tenFishCaught && _fishAppear && !PauseMenu.Instance.isPaused && !_gameEnding)
         {
             reelingInSound.Stop();
             score++;
@@ -108,19 +113,20 @@ public class PlayerController : MonoBehaviour
                 winGameSound.PlayDelayed(0.5f);
             }
         } 
-        else if (Input.GetMouseButtonDown(1) && tenFishCaught && !PauseMenu.Instance.isPaused)
+        else if (Input.GetMouseButtonDown(1) && tenFishCaught && !PauseMenu.Instance.isPaused && !_gameEnding)
         {
             Debug.Log("Stop catching fish");
         }
         //trying to catch fish when score is more than 0 and there is no fish to catch minus one fish
-        else if (Input.GetMouseButtonDown(1) && !_fishAppear && score > 0 && !PauseMenu.Instance.isPaused)
+        else if (Input.GetMouseButtonDown(1) && !_fishAppear && score > 0 && !PauseMenu.Instance.isPaused && !_gameEnding)
         {
             score--;
+            scoreScriptableObject.misclicks += 1;
             Debug.Log("Fish lost :[");
             breakLineSound.Play();
         }
 
-        if (!PauseMenu.Instance.isPaused && !tenFishCaught)
+        if (!PauseMenu.Instance.isPaused && !tenFishCaught && !_gameEnding)
         {
             //tween sun in correlation to daylightTimer
             _currentDaylightTimer -= Time.deltaTime;
@@ -128,11 +134,11 @@ public class PlayerController : MonoBehaviour
             if (_currentDaylightTimer <= 0)
             {
                 //lose animation
-                SceneManager.LoadScene("Scene 4");
+                StartCoroutine(LoseGame());
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && !_gameEnding)
         {
             PauseMenu.Instance.PauseGame();
         }
@@ -157,8 +163,11 @@ public class PlayerController : MonoBehaviour
         looseLineAnim.SetActive(true);
         if (tenFishCaught)
         {
+            scoreScriptableObject.timeLeft += _currentDaylightTimer;
             orderNumber[LevelSystem.Instance.level - 1].SetActive(true);
             yield return new WaitForSeconds(2f);
+            FadeManager.Instance.FadeOut();
+            yield return new WaitForSeconds(0.5f);
             if (LevelSystem.Instance.level == 5)
             {
                 SceneManager.LoadScene("Scene 6");
@@ -186,7 +195,12 @@ public class PlayerController : MonoBehaviour
         looseLineAnim.SetActive(true);
     }
 
+    IEnumerator LoseGame()
+    {
+        _gameEnding = true;
+        FadeManager.Instance.FadeOut();
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Scene 4");
+    }
+
 }
-
-
-// TODO: pause background music when ten fish has been caught to make overlaps not happen

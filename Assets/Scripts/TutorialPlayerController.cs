@@ -238,6 +238,12 @@ public class TutorialPlayerController : MonoBehaviour
     {
         _currentlySpeaking = true;
 
+        if (_currentStep == TutorialStep.CatchThreeFish)
+        {
+            FadeManager.Instance.FadeIn();
+            yield return new WaitForSeconds(1f);
+        }
+        
         if (_currentStep == TutorialStep.LoseWinSystem)
         {
             yield return new WaitForSeconds(1f);
@@ -324,6 +330,8 @@ public class TutorialPlayerController : MonoBehaviour
         {
             PlayerPrefs.SetInt("Tutorial", 1);
             PlayerPrefs.Save();
+            FadeManager.Instance.FadeOut();
+            yield return new WaitForSeconds(0.5f);
             SceneManager.LoadScene("Scene 3");
         }
         else

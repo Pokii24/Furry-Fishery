@@ -22,6 +22,8 @@ public class WinScene : MonoBehaviour
     
     private IEnumerator Start()
     {
+        FadeManager.Instance.FadeIn();
+        yield return new WaitForSeconds(1f);
         //wait for fade in
         dialogueBox.SetActive(true);
         foreach (Dialogue currentDialogue in winDialogue.dialogueList)
@@ -99,7 +101,7 @@ public class WinScene : MonoBehaviour
         dialogueSprite.sprite = null;
         dialogueSpriteBack.sprite = null;
         LevelSystem.Instance.level = 1;
-        SceneManager.LoadScene("Scene 0");
+        StartCoroutine(PlayerWinOptions.Instance.PauseCoroutine());
     }
     private void Update()
     {

@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneIntroductionOne : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class SceneIntroductionOne : MonoBehaviour
     
     private IEnumerator Start()
     {
+        FadeManager.Instance.FadeIn();
+        yield return new WaitForSeconds(1f);
         //wait for animation of customer sliding in
         dialogueBox.SetActive(true);
         foreach (Dialogue currentDialogue in introDialogue.dialogueList)
@@ -97,6 +100,9 @@ public class SceneIntroductionOne : MonoBehaviour
         dialogueBox.SetActive(false);
         dialogueSprite.sprite = null;
         dialogueSpriteBack.sprite = null;
+        FadeManager.Instance.FadeOut();
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Scene 2");
     }
 
     private void Update()

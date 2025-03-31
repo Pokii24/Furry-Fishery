@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class OrderCompleteScene : MonoBehaviour
 {
-    public DialogueScriptableObject orderCompleteDialogue;
+    public List<DialogueScriptableObject> orderCompleteDialogues;
     public GameObject dialogueBox;
     public TMP_Text dialogueNameLeft;
     public TMP_Text dialogueNameRight;
@@ -22,9 +22,11 @@ public class OrderCompleteScene : MonoBehaviour
     
     private IEnumerator Start()
     {
+        FadeManager.Instance.FadeIn();
+        yield return new WaitForSeconds(1f);
         //wait for fade in
         dialogueBox.SetActive(true);
-        foreach (Dialogue currentDialogue in orderCompleteDialogue.dialogueList)
+        foreach (Dialogue currentDialogue in orderCompleteDialogues[LevelSystem.Instance.level - 1].dialogueList)
         {
             dialogueNameLeft.text = currentDialogue.name;
             dialogueNameRight.text = currentDialogue.name;
@@ -99,6 +101,8 @@ public class OrderCompleteScene : MonoBehaviour
         dialogueSprite.sprite = null;
         dialogueSpriteBack.sprite = null;
         LevelSystem.Instance.level += 1;
+        FadeManager.Instance.FadeOut();
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Scene 3");
     }
     private void Update()

@@ -23,6 +23,8 @@ public class LoseScene : MonoBehaviour
     
     private IEnumerator Start()
     {
+        FadeManager.Instance.FadeIn();
+        yield return new WaitForSeconds(1f);
         //wait for screen to fade in
         dialogueBox.SetActive(true);
         foreach (Dialogue currentDialogue in loseDialogue.dialogueList)
@@ -101,6 +103,8 @@ public class LoseScene : MonoBehaviour
         dialogueSpriteBack.sprite = null;
         //wait for fadeout
         LevelSystem.Instance.level = 1;
+        FadeManager.Instance.FadeOut();
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Scene 0");
     }
     private void Update()
