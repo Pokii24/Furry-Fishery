@@ -61,6 +61,8 @@ public class WinScene : MonoBehaviour
                 dialogueNameLeft.gameObject.SetActive(true);
                 dialogueNameRight.gameObject.SetActive(false);
             }
+
+            _isTalking = true;
             foreach (char currentCharacter in currentDialogue.message)
             {
                 if (_skipDialogue)
@@ -95,7 +97,7 @@ public class WinScene : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
 
-
+            _isTalking = false;
             dialogueSprite.sprite = currentDialogue.texture;
             while (!Input.GetMouseButtonDown(0))
             {

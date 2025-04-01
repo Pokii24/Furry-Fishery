@@ -39,7 +39,7 @@ MonoBehaviour:
     dialogueSpriteBack: {fileID: 21300000, guid: a0615248e58368e4ba37c3f0fa6e2afc, type: 3}
   - name: Anthony
     message: 
-    isLeft: 1
+    isLeft: 0
     textWidth: 700
     talkSound: {fileID: 8300000, guid: e5c7785cf88b3b64984ecb8ff7e5f54a, type: 3}
     texture: {fileID: 21300000, guid: a0615248e58368e4ba37c3f0fa6e2afc, type: 3}
@@ -47,8 +47,8 @@ MonoBehaviour:
     dialogueSpriteBack: {fileID: 21300000, guid: 53584454415ecf047a3409c86b0008a1, type: 3}
   - name: Xavier
     message: 
-    isLeft: 0
-    textWidth: 770
+    isLeft: 1
+    textWidth: 1000
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
     texture: {fileID: 21300000, guid: 53584454415ecf047a3409c86b0008a1, type: 3}
     textureTalking: {fileID: 21300000, guid: 4a3c6f1f69ac3ae42bbc2aac9b839b82, type: 3}

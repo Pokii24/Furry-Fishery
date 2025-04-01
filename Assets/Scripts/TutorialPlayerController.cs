@@ -222,7 +222,7 @@ public class TutorialPlayerController : MonoBehaviour
                 scoreText.text = $"Fish : {score}/3";
                 break;
             case TutorialStep.LoseOneFish:
-                scoreText.text = $"Fish : {score}/4";
+                scoreText.text = $"Lose a fish\nFish : {score}/4";
                 break;
             case TutorialStep.PauseMenu:
                 scoreText.text = "Open pause menu";

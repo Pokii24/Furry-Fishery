@@ -63,6 +63,8 @@ public class LoseScene : MonoBehaviour
                 dialogueNameLeft.gameObject.SetActive(true);
                 dialogueNameRight.gameObject.SetActive(false);
             }
+
+            _isTalking = true;
             //run a foreach loop for every character (not person, letter/numbers) in the message
             foreach (char currentCharacter in currentDialogue.message)
             {
@@ -98,7 +100,7 @@ public class LoseScene : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
 
-
+            _isTalking = false;
             dialogueSprite.sprite = currentDialogue.texture;
             //wait to go to the next dialogue, yield return null to tell unity script is being used
             while (!Input.GetMouseButtonDown(0))
