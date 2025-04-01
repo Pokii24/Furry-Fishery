@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,7 @@ public class MainMenu : MonoBehaviour
 {
     public AudioMixer SFXMixer;
     public AudioMixer MusicMixer;
+    public CanvasGroup PressAnyKeyText;
     private bool _isLoading;
     
     private void Start()
@@ -23,6 +25,8 @@ public class MainMenu : MonoBehaviour
         MusicMixer.SetFloat("MusicVolume", Mathf.Log10(PlayerPrefs.GetFloat("MusicVolume")) * 20);
 
         FadeManager.Instance.FadeIn();
+        Application.targetFrameRate = -1;
+        PressAnyKeyText.DOFade(0f, 0.7f).SetLoops(-1, LoopType.Yoyo);
     }
 
     void Update()

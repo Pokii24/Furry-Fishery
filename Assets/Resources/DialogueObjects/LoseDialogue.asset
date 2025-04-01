@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9962975616589f6499453c3d92530b22, type: 3}
   m_Name: LoseDialogue
   m_EditorClassIdentifier: 
-  dialogues:
+  dialogueList:
   - name: Anthony
-    message: F### U XAVIER
+    message: u lost bozo
     isLeft: 0
     textWidth: 700
     talkSound: {fileID: 8300000, guid: e1fe4bb51e81ab341a6f83c3c3b21482, type: 3}
@@ -22,7 +22,7 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: 0b1b086d1a2edf84cb257908d17e0a29, type: 3}
     dialogueSpriteBack: {fileID: 21300000, guid: cb07d11b26feeeb429a525540dc68c6a, type: 3}
   - name: Taiku
-    message: whos xavier?
+    message: crazy
     isLeft: 1
     textWidth: 1050
     talkSound: {fileID: 8300000, guid: e1fe4bb51e81ab341a6f83c3c3b21482, type: 3}
@@ -30,7 +30,7 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: a229c71594abe8b47b5d2a88fd84876d, type: 3}
     dialogueSpriteBack: {fileID: 21300000, guid: af1f9019ae0e0c846a69757a4d8ff707, type: 3}
   - name: Anthony
-    message: SCREW YOU
+    message: '>;['
     isLeft: 0
     textWidth: 700
     talkSound: {fileID: 8300000, guid: e1fe4bb51e81ab341a6f83c3c3b21482, type: 3}
