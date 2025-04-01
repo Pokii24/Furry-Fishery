@@ -27,6 +27,7 @@ public class CustomCursor : MonoBehaviour
 
     private void Update()
     {
+        //Gets mouse position and transfers to "world"
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = mousePos;
     }

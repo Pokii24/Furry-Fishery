@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
         _currentlyFishing = true;
         _fishAppear = false;
         _currentFishtime = Random.Range(minFishTime, maxFishTime);
+        //sets reaction time to corresponding level's amount
         startOfReelingTime = LevelSystem.Instance.levels[LevelSystem.Instance.level - 1];
         _currentDaylightTimer = daylightTimer;
         FadeManager.Instance.FadeIn();
@@ -143,7 +144,7 @@ public class PlayerController : MonoBehaviour
             PauseMenu.Instance.PauseGame();
         }
         
-        // updates text UI of fish caught
+        //updates text UI of fish caught
         scoreText.text = $"Fish : {score}/10";
     }
     //wait before playing catch fish animation 
@@ -163,6 +164,7 @@ public class PlayerController : MonoBehaviour
         looseLineAnim.SetActive(true);
         if (tenFishCaught)
         {
+            //adding amount of time left we have to the total "time left score", and goes to the next order if passed
             scoreScriptableObject.timeLeft += _currentDaylightTimer;
             orderNumber[LevelSystem.Instance.level - 1].SetActive(true);
             yield return new WaitForSeconds(2f);

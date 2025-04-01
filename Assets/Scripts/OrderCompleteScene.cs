@@ -22,6 +22,7 @@ public class OrderCompleteScene : MonoBehaviour
     
     private IEnumerator Start()
     {
+        //fade the screen in amd set the sprites correlating to who is going to speak next
         FadeManager.Instance.FadeIn();
         dialogueSprite.sprite = orderCompleteDialogues[LevelSystem.Instance.level - 1].dialogueList[0].texture;
         if (orderCompleteDialogues[LevelSystem.Instance.level - 1].dialogueList[0].dialogueSpriteBack)
@@ -29,7 +30,7 @@ public class OrderCompleteScene : MonoBehaviour
             dialogueSpriteBack.sprite = orderCompleteDialogues[LevelSystem.Instance.level - 1].dialogueList[0].dialogueSpriteBack;
         }
         yield return new WaitForSeconds(1f);
-        //wait for fade in
+        //wait for the screen to fade in and then make dialogue box visible
         dialogueBox.SetActive(true);
         foreach (Dialogue currentDialogue in orderCompleteDialogues[LevelSystem.Instance.level - 1].dialogueList)
         {
@@ -61,6 +62,7 @@ public class OrderCompleteScene : MonoBehaviour
                 dialogueNameLeft.gameObject.SetActive(true);
                 dialogueNameRight.gameObject.SetActive(false);
             }
+            //run a foreach loop for every character (not person, letter/numbers) in the message
             foreach (char currentCharacter in currentDialogue.message)
             {
                 if (_skipDialogue)
@@ -97,6 +99,7 @@ public class OrderCompleteScene : MonoBehaviour
 
 
             dialogueSprite.sprite = currentDialogue.texture;
+            //wait to go to the next dialogue, yield return null to tell unity script is being used
             while (!Input.GetMouseButtonDown(0))
             {
                 yield return null;
@@ -105,6 +108,7 @@ public class OrderCompleteScene : MonoBehaviour
         dialogueBox.SetActive(false);
         dialogueSprite.sprite = null;
         dialogueSpriteBack.sprite = null;
+        //wait for fadeout
         LevelSystem.Instance.level += 1;
         FadeManager.Instance.FadeOut();
         yield return new WaitForSeconds(0.5f);

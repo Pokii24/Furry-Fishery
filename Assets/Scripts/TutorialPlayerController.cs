@@ -70,7 +70,6 @@ public class TutorialPlayerController : MonoBehaviour
         _currentlyFishing = true;
         _fishAppear = false;
         _currentFishtime = Random.Range(minFishTime, maxFishTime);
-        //dw about this
         startOfReelingTime = 999999;
         _currentDaylightTimer = daylightTimer;
         StartCoroutine(NewTutorialDialogue(tutorialDialogues[0]));

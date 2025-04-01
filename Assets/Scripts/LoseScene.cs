@@ -23,14 +23,15 @@ public class LoseScene : MonoBehaviour
     
     private IEnumerator Start()
     {
+        //fade the screen in amd set the sprites correlating to who is going to speak next
         FadeManager.Instance.FadeIn();
         dialogueSprite.sprite = loseDialogue.dialogueList[0].texture;
         if (loseDialogue.dialogueList[0].dialogueSpriteBack)
         {
             dialogueSpriteBack.sprite = loseDialogue.dialogueList[0].dialogueSpriteBack;
         }
+        //wait for the screen to fade in and then make dialogue box visible
         yield return new WaitForSeconds(1f);
-        //wait for screen to fade in
         dialogueBox.SetActive(true);
         foreach (Dialogue currentDialogue in loseDialogue.dialogueList)
         {
@@ -47,7 +48,7 @@ public class LoseScene : MonoBehaviour
             {
                 dialogueSpriteBack.sprite = null;
             }
-            //based on the character position (left or right), set the textbox width so it doesnt clip into the character
+            //based on the character position (left or right), set the textbox width so it doesn't clip into the character
             if (currentDialogue.isLeft)
             {
                 dialogueBoxRect.offsetMin = new Vector2(currentDialogue.textWidth, dialogueBoxRect.anchoredPosition.y);
@@ -62,6 +63,7 @@ public class LoseScene : MonoBehaviour
                 dialogueNameLeft.gameObject.SetActive(true);
                 dialogueNameRight.gameObject.SetActive(false);
             }
+            //run a foreach loop for every character (not person, letter/numbers) in the message
             foreach (char currentCharacter in currentDialogue.message)
             {
                 if (_skipDialogue)
@@ -98,6 +100,7 @@ public class LoseScene : MonoBehaviour
 
 
             dialogueSprite.sprite = currentDialogue.texture;
+            //wait to go to the next dialogue, yield return null to tell unity script is being used
             while (!Input.GetMouseButtonDown(0))
             {
                 yield return null;
