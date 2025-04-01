@@ -13,32 +13,35 @@ MonoBehaviour:
   m_Name: OrderThree
   m_EditorClassIdentifier: 
   dialogueList:
-  - name: Genkai
-    message: Five
+  - name: Pokii
+    message: Hi!! I saw this place opened recently could I also put in an order?
     isLeft: 1
-    textWidth: 930
-    talkSound: {fileID: 8300000, guid: 37285630ab1bcf34ba05c6f28b87acda, type: 3}
-    texture: {fileID: 21300000, guid: 1e6383d0afaad8a4087f77e1f51e994c, type: 3}
-    textureTalking: {fileID: 21300000, guid: 5945d8ee0a7b4694db48d9e562dd7c7a, type: 3}
+    textWidth: 905
+    talkSound: {fileID: 8300000, guid: 2aba51795d7a9834cb6ab734a1e1e341, type: 3}
+    texture: {fileID: 21300000, guid: d03f0b1a83df81c4785abc19dea0f2cb, type: 3}
+    textureTalking: {fileID: 21300000, guid: 1c118ba766f527346b1ecd43e492ff5a, type: 3}
     dialogueSpriteBack: {fileID: 21300000, guid: a0615248e58368e4ba37c3f0fa6e2afc, type: 3}
   - name: Anthony
-    message: 
+    message: Well nice seeing a new face around here, and I hope you like salmon,
+      because thats the special of the day!
     isLeft: 0
     textWidth: 700
     talkSound: {fileID: 8300000, guid: e5c7785cf88b3b64984ecb8ff7e5f54a, type: 3}
     texture: {fileID: 21300000, guid: a0615248e58368e4ba37c3f0fa6e2afc, type: 3}
     textureTalking: {fileID: 21300000, guid: fbe3aadd5b43ab849bccfddf21ef79ca, type: 3}
-    dialogueSpriteBack: {fileID: 21300000, guid: 1e6383d0afaad8a4087f77e1f51e994c, type: 3}
-  - name: Genkai
-    message: 
+    dialogueSpriteBack: {fileID: 21300000, guid: d03f0b1a83df81c4785abc19dea0f2cb, type: 3}
+  - name: Pokii
+    message: Yes that's my favourite fish actually! Also who's that wolf back there
+      and why is his nose bleeding?
     isLeft: 1
-    textWidth: 930
-    talkSound: {fileID: 8300000, guid: 37285630ab1bcf34ba05c6f28b87acda, type: 3}
-    texture: {fileID: 21300000, guid: 1e6383d0afaad8a4087f77e1f51e994c, type: 3}
-    textureTalking: {fileID: 21300000, guid: 5945d8ee0a7b4694db48d9e562dd7c7a, type: 3}
+    textWidth: 905
+    talkSound: {fileID: 8300000, guid: 2aba51795d7a9834cb6ab734a1e1e341, type: 3}
+    texture: {fileID: 21300000, guid: d03f0b1a83df81c4785abc19dea0f2cb, type: 3}
+    textureTalking: {fileID: 21300000, guid: 1c118ba766f527346b1ecd43e492ff5a, type: 3}
     dialogueSpriteBack: {fileID: 21300000, guid: a0615248e58368e4ba37c3f0fa6e2afc, type: 3}
   - name: Anthony
-    message: 
+    message: Oh thats Xavier the fisherman (or should I say fisherwolf?) that catches
+      the fish fresh for each order.
     isLeft: 0
     textWidth: 700
     talkSound: {fileID: 8300000, guid: e5c7785cf88b3b64984ecb8ff7e5f54a, type: 3}
@@ -46,7 +49,8 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: fbe3aadd5b43ab849bccfddf21ef79ca, type: 3}
     dialogueSpriteBack: {fileID: 21300000, guid: 53584454415ecf047a3409c86b0008a1, type: 3}
   - name: Xavier
-    message: 
+    message: Yeah and don't worry about the nosebleed thing... its an allergy issue,
+      yk, being a wolf and all, my nose is sensitive...
     isLeft: 1
     textWidth: 1000
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}

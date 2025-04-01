@@ -47,7 +47,7 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: fbe3aadd5b43ab849bccfddf21ef79ca, type: 3}
     dialogueSpriteBack: {fileID: 21300000, guid: 53584454415ecf047a3409c86b0008a1, type: 3}
   - name: Xavier
-    message: Nice to meet you Genkai! I'll get right to work.
+    message: Nice to meet you Genkai. I'll get right to work.
     isLeft: 1
     textWidth: 1000
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
