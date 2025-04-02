@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9962975616589f6499453c3d92530b22, type: 3}
   m_Name: WinScene
   m_EditorClassIdentifier: 
-  dialogues:
+  dialogueList:
   - name: Anthony
-    message: YIPPEEE U WON WOWOOWOW!!!! U GET PAID THIS TIME LESGO :DD
+    message: Im so greatfull for you all! We have enough to run the shop from now
+      on! Lets eat some sushi to celebrate :D
     isLeft: 0
     textWidth: 700
-    talkSound: {fileID: 0}
-    texture: {fileID: 21300000, guid: af1f9019ae0e0c846a69757a4d8ff707, type: 3}
-    textureTalking: {fileID: 21300000, guid: 0b1b086d1a2edf84cb257908d17e0a29, type: 3}
+    talkSound: {fileID: 8300000, guid: e5c7785cf88b3b64984ecb8ff7e5f54a, type: 3}
+    texture: {fileID: 21300000, guid: a0615248e58368e4ba37c3f0fa6e2afc, type: 3}
+    textureTalking: {fileID: 21300000, guid: fbe3aadd5b43ab849bccfddf21ef79ca, type: 3}
     dialogueSpriteBack: {fileID: 0}

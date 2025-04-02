@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueList:
   - name: Xavier
-    message: you can see how many fish you have on the top right of the screen on
-      the hanging sign. Lets try catching 3 fish.
+    message: You can see how many fish you have on the top right of the screen on
+      the hanging sign. Lets try catching 3 fish by right clicking.
     isLeft: 1
     textWidth: 670
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
@@ -23,8 +23,8 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: 4a3c6f1f69ac3ae42bbc2aac9b839b82, type: 3}
     dialogueSpriteBack: {fileID: 0}
   - name: Xavier
-    message: to catch a fish make sure you look for the rod being pulled down and
-      text and audio that will appear along with it
+    message: To catch a fish make sure you look for the rod being pulled down and
+      text and audio that will appear along with it.
     isLeft: 1
     textWidth: 670
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
@@ -32,7 +32,7 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: 4a3c6f1f69ac3ae42bbc2aac9b839b82, type: 3}
     dialogueSpriteBack: {fileID: 0}
   - name: Xavier
-    message: catch them all before the timer on the left runs out
+    message: Catch them all before the timer on the left runs out, you have 90 seconds.
     isLeft: 0
     textWidth: 770
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
@@ -40,8 +40,8 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: 4a3c6f1f69ac3ae42bbc2aac9b839b82, type: 3}
     dialogueSpriteBack: {fileID: 0}
   - name: Xavier
-    message: for this time i can let it slide if you dont finish on time but make
-      sure it doesnt happen when doing an order.
+    message: For this time I can let it slide if you dont finish on time, but make
+      sure it doesn't happen when doing an order.
     isLeft: 0
     textWidth: 770
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
