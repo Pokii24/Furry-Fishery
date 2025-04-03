@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueList:
   - name: Arthur
-    message: I heard this place is suppose to be the best.
+    message: I heard this establishment is supposed to be the best.
     isLeft: 1
     textWidth: 890
     talkSound: {fileID: 8300000, guid: 37285630ab1bcf34ba05c6f28b87acda, type: 3}

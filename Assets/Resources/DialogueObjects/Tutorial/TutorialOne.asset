@@ -23,8 +23,8 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: 4a3c6f1f69ac3ae42bbc2aac9b839b82, type: 3}
     dialogueSpriteBack: {fileID: 0}
   - name: Xavier
-    message: To catch a fish make sure you look for the rod being pulled down and
-      text and audio that will appear along with it.
+    message: To catch a fish, make sure you look for the rod being pulled down, along
+      with the text and audio that will appear at the same time.
     isLeft: 1
     textWidth: 670
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
@@ -32,7 +32,8 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: 4a3c6f1f69ac3ae42bbc2aac9b839b82, type: 3}
     dialogueSpriteBack: {fileID: 0}
   - name: Xavier
-    message: Catch them all before the timer on the left runs out, you have 90 seconds.
+    message: Catch them all before the timer on the left runs out. You have 90 seconds,
+      so make them count.
     isLeft: 0
     textWidth: 770
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}

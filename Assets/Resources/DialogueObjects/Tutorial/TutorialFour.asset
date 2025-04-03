@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueList:
   - name: Xavier
-    message: Alright now that we know the basics let me teach you about winning and
-      losing.
+    message: Alright, now that we know the basics let me teach you about winning
+      and losing.
     isLeft: 1
     textWidth: 670
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
@@ -23,9 +23,8 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: 4a3c6f1f69ac3ae42bbc2aac9b839b82, type: 3}
     dialogueSpriteBack: {fileID: 0}
   - name: Xavier
-    message: If you lose a game by not catching enough fish for the order in time
-      when the daylight bar in the left runs out you will have to restart from the
-      start.
+    message: If you lose a game by not catching 10 fish in time when the daylight
+      bar on the left runs out, you will have to restart from the title screen.
     isLeft: 1
     textWidth: 670
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}
@@ -34,7 +33,7 @@ MonoBehaviour:
     dialogueSpriteBack: {fileID: 0}
   - name: Xavier
     message: However, if you manage to win then we can continue to the next order
-      untill all 5 customers have been served.
+      until all 5 customers have been served.
     isLeft: 1
     textWidth: 670
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}

@@ -22,8 +22,8 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: 4a3c6f1f69ac3ae42bbc2aac9b839b82, type: 3}
     dialogueSpriteBack: {fileID: 0}
   - name: Xavier
-    message: You can find the right audio settings for you as well as restarting
-      the game if you press main menu.
+    message: You can find the right audio settings that you want, as well as restarting
+      the game if you press the main menu button.
     isLeft: 1
     textWidth: 670
     talkSound: {fileID: 8300000, guid: 0229bdd21b3b53f489d780e187a9cea1, type: 3}

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueList:
   - name: Taiku
-    message: Hey Anthony how have you been, could I please have 10 fish salmon special
-      :]
+    message: Hey Anthony, how have you been? Could I please have the special with
+      10 salmon? :]
     isLeft: 1
     textWidth: 1050
     talkSound: {fileID: 8300000, guid: e28be33e25df3cd488df03e9a701a7c2, type: 3}
@@ -23,7 +23,7 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: a229c71594abe8b47b5d2a88fd84876d, type: 3}
     dialogueSpriteBack: {fileID: 0}
   - name: Anthony
-    message: One second haha I gotta get the step stool (geez i forgot how tall Taiku
+    message: One second haha I gotta get the step stool (geez I forgot how tall Taiku
       was)
     isLeft: 0
     textWidth: 0
@@ -32,7 +32,7 @@ MonoBehaviour:
     textureTalking: {fileID: 0}
     dialogueSpriteBack: {fileID: 21300000, guid: cb07d11b26feeeb429a525540dc68c6a, type: 3}
   - name: Anthony
-    message: Yes you can bud! Good to see you again, I see you have brought some
+    message: Yes you can bud! Good to see you again. I see you have brought some
       friends, how nice.
     isLeft: 0
     textWidth: 700
@@ -41,7 +41,7 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: 0b1b086d1a2edf84cb257908d17e0a29, type: 3}
     dialogueSpriteBack: {fileID: 21300000, guid: cb07d11b26feeeb429a525540dc68c6a, type: 3}
   - name: Taiku
-    message: How have you and Xavier been, you know newly running this shop?
+    message: How have you and Xavier been? You know, newly running this shop?
     isLeft: 1
     textWidth: 1050
     talkSound: {fileID: 8300000, guid: e28be33e25df3cd488df03e9a701a7c2, type: 3}
@@ -49,7 +49,7 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: a229c71594abe8b47b5d2a88fd84876d, type: 3}
     dialogueSpriteBack: {fileID: 21300000, guid: af1f9019ae0e0c846a69757a4d8ff707, type: 3}
   - name: Anthony
-    message: Oh it's been wonderfull, a little slow though hence our new addition
+    message: Oh it's been wonderful! A little slow though, hence our new addition
       of having specials!
     isLeft: 0
     textWidth: 700
@@ -58,7 +58,7 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: 0b1b086d1a2edf84cb257908d17e0a29, type: 3}
     dialogueSpriteBack: {fileID: 21300000, guid: cb07d11b26feeeb429a525540dc68c6a, type: 3}
   - name: Xavier
-    message: Hey good seeing you again mate, I'll fish and get these fish cooked
+    message: Hey, good seeing you again mate. I'll go fish and get some fish cooked
       up for you and your buds as best I can.
     isLeft: 1
     textWidth: 1000

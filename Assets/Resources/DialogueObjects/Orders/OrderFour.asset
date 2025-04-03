@@ -36,7 +36,7 @@ MonoBehaviour:
     textWidth: 850
     talkSound: {fileID: 8300000, guid: e1fe4bb51e81ab341a6f83c3c3b21482, type: 3}
     texture: {fileID: 21300000, guid: 43873781a780393408c8ab56aa0ffcd5, type: 3}
-    textureTalking: {fileID: 21300000, guid: 5945d8ee0a7b4694db48d9e562dd7c7a, type: 3}
+    textureTalking: {fileID: 21300000, guid: 4edec7aeaf7149f4dbac9332a67272bd, type: 3}
     dialogueSpriteBack: {fileID: 21300000, guid: a0615248e58368e4ba37c3f0fa6e2afc, type: 3}
   - name: Anthony
     message: That's amazing to hear! (Is he allowed to eat fish?... Being a fish

@@ -18,8 +18,8 @@ public class MainMenu : MonoBehaviour
         //if we dont have save data set default volume values
         if (!PlayerPrefs.HasKey("SFXVolume"))
         {
-            PlayerPrefs.SetFloat("SFXVolume", 0.5f);
-            PlayerPrefs.SetFloat("MusicVolume", 0.5f);
+            PlayerPrefs.SetFloat("SFXVolume", 0.25f);
+            PlayerPrefs.SetFloat("MusicVolume", 0.25f);
         }
 
         SFXMixer.SetFloat("SFXVolume", Mathf.Log10(PlayerPrefs.GetFloat("SFXVolume")) * 20);

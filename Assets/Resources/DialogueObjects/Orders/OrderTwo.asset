@@ -39,13 +39,13 @@ MonoBehaviour:
     textureTalking: {fileID: 21300000, guid: 5945d8ee0a7b4694db48d9e562dd7c7a, type: 3}
     dialogueSpriteBack: {fileID: 21300000, guid: a0615248e58368e4ba37c3f0fa6e2afc, type: 3}
   - name: Anthony
-    message: In the corner to the left should be and outlet!
+    message: In the corner to the left should be an outlet!
     isLeft: 0
     textWidth: 700
     talkSound: {fileID: 8300000, guid: e5c7785cf88b3b64984ecb8ff7e5f54a, type: 3}
     texture: {fileID: 21300000, guid: a0615248e58368e4ba37c3f0fa6e2afc, type: 3}
     textureTalking: {fileID: 21300000, guid: fbe3aadd5b43ab849bccfddf21ef79ca, type: 3}
-    dialogueSpriteBack: {fileID: 21300000, guid: 53584454415ecf047a3409c86b0008a1, type: 3}
+    dialogueSpriteBack: {fileID: 21300000, guid: 1e6383d0afaad8a4087f77e1f51e994c, type: 3}
   - name: Xavier
     message: Nice to meet you Genkai. I'll get right to work.
     isLeft: 1

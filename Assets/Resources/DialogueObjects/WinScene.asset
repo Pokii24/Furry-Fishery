@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueList:
   - name: Anthony
-    message: Im so greatfull for you all! We have enough to run the shop from now
-      on! Lets eat some sushi to celebrate :D
+    message: I'm so greatful for you all! We have enough to run the shop from now
+      on! Lets eat some sushi to celebrate!! :D
     isLeft: 0
     textWidth: 700
     talkSound: {fileID: 8300000, guid: e5c7785cf88b3b64984ecb8ff7e5f54a, type: 3}
