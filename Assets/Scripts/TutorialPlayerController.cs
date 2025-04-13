@@ -56,6 +56,7 @@ public class TutorialPlayerController : MonoBehaviour
     private bool _whisper;
     private bool _isTalking;
     private bool _skipDialogue;
+    private bool _fastDialogue;
     
     private enum TutorialStep
     {
@@ -316,9 +317,17 @@ public class TutorialPlayerController : MonoBehaviour
                 else
                 {
                     dialogueSprite.sprite = currentDialogue.textureTalking;
-                    dialogueAudio.Play();
+                    if (!_fastDialogue)
+                    {
+                        dialogueAudio.Play();
+                        _fastDialogue = true;
+                    }
+                    else
+                    {
+                        _fastDialogue = false;
+                    }
                 }
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.05f);
             }
             _isTalking = false;
             dialogueSprite.sprite = currentDialogue.texture;

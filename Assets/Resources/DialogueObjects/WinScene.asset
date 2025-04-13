@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueList:
   - name: Anthony
-    message: I'm so greatful for you all! We have enough to run the shop from now
+    message: I'm so gratetful for you all! We have enough to run the shop from now
       on! Lets eat some sushi to celebrate!! :D
     isLeft: 0
     textWidth: 700
